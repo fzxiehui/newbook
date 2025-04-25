@@ -120,3 +120,68 @@ else:
 
 print(">>> 连接关闭完成")
 ```
+
+## udp实验
+
+### 发送udp包
+
+```python
+from scapy.all import *
+
+# 目标主机和端口
+target_ip = "192.168.1.100"
+target_port = 12345
+
+# 构造 UDP 数据包
+pkt = IP(dst=target_ip) / UDP(dport=target_port, sport=RandShort()) / Raw(load="Hello from Scapy!")
+
+# 发送
+send(pkt)
+
+# udp广播
+pkt = IP(dst="255.255.255.255") / UDP(dport=12345, sport=6666) / Raw(load="广播测试")
+send(pkt, count=10, inter=0.5)  # 连续发送10个，每0.5秒一个
+```
+
+### dns查询
+
+```python
+from scapy.all import *
+
+dns_server = "8.8.8.8"  # 可替换为你的 DNS，比如局域网 DNS
+query_name = "www.example.com"
+
+dns_req = IP(dst=dns_server) / UDP(sport=RandShort(), dport=53) / \
+          DNS(rd=1, qd=DNSQR(qname=query_name))
+
+resp = sr1(dns_req, timeout=2, verbose=0)
+
+if resp and resp.haslayer(DNS):
+    for i in range(resp[DNS].ancount):
+        print("结果:", resp[DNS].an[i].rdata)
+else:
+    print("无响应")
+```
+
+### ntp查询
+
+```python
+from scapy.all import *
+
+ntp_server = "pool.ntp.org"  # 你可以改为内网 NTP
+ntp_port = 123
+
+# 构造 NTP 数据（48字节，模式为 client）
+ntp_payload = b'\x1b' + 47 * b'\0'  # 0x1B 表示 LI=0, VN=3, Mode=3（客户端）
+
+pkt = IP(dst=ntp_server) / UDP(sport=RandShort(), dport=ntp_port) / Raw(load=ntp_payload)
+resp = sr1(pkt, timeout=2, verbose=0)
+
+if resp:
+    raw_time = resp[Raw].load[40:44]  # 从字节 40 开始取4字节时间戳
+    import struct, datetime
+    ntp_time = struct.unpack("!I", raw_time)[0] - 2208988800  # 转换为 Unix 时间戳
+    print("NTP 返回时间:", datetime.datetime.utcfromtimestamp(ntp_time))
+else:
+    print("无响应")
+```
