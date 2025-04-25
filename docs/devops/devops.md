@@ -86,10 +86,10 @@ source ~/.bashrc
 
 ```shell
 # 递归子目录全部 txt文件
-find . -name *.txt
+find . -name "*.txt"
 
 # 递归子目录全部 txt文件 过滤出有hello的文件
-find . -name *.txt | xargs grep 'hello'
+find . -name "*.txt" | xargs grep 'hello'
 ```
 
 1. 临时文件服务器
