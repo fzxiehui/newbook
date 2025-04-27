@@ -1,22 +1,5 @@
 # 开发与运维
 
-## `ssh` 免密登录
-
-```shell
-ssh-copy-id username@remote-server
-# e.g:
-ssh-copy-id hello@172.16.1.251
-# 相当于在 ~/.ssh/authorized_keys 追加公钥
-```
-
-## 禁止用密码登录`sshd`(防暴)
-
-- `sudo vi /etc/ssh/sshd_config`
-
-```shell
-PasswordAuthentication no
-```
-
 ## 修改系统默认编辑器为`vi`
 
 ```shell

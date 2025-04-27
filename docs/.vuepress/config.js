@@ -40,6 +40,8 @@ export default defineUserConfig({
       {
         "text": "开发与运维",
         children: [
+          "/devops/science.md",
+          "/devops/serve.md",
           "/devops/devops.md",
         ]
       },
