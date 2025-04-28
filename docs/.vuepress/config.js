@@ -15,6 +15,12 @@ export default defineUserConfig({
     navbar: ['/', '/get-started'],
     sidebar: [
       {
+        "text": "简介",
+        children: [
+          "/get-started.md",
+        ]
+      },
+      {
         "text": "计算机视觉",
         children: [
           "/cv/pillow.md",
@@ -43,12 +49,7 @@ export default defineUserConfig({
           "/devops/science.md",
           "/devops/serve.md",
           "/devops/devops.md",
-        ]
-      },
-      {
-        "text": "文档",
-        children: [
-          "/vuepress/vuepress.md",
+          "/devops/vuepress.md",
         ]
       },
 		]

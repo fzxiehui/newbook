@@ -1,9 +1,9 @@
 ---
 home: true
-title: Home
+title: 主页
 heroImage: pri_assets/tom_and_jerry.png
 actions:
-  - text: Get Started
+  - text: 进入文档
     link: /get-started.html
     type: primary
 

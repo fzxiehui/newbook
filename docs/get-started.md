@@ -1,46 +1,43 @@
-# Get Started
+# 蓝图
 
-This is a normal page, which contains VuePress basics.
+> 路漫漫其修远兮
 
-## Pages
+:::warning 重要 
+- 文档编写目标: 零废话!!!, 全部内容都要能复用!!!
+- 主要方向: `liunx`应用软件(服务)开发
+:::
 
-You can add markdown files in your vuepress directory, every markdown file will be converted to a page in your site.
+## 嵌入式与物联网 
 
-See [routing][] for more details.
+- `freertos` 近期无计划
+- MQTT代理二次开发(待总结)
+- 嵌入式`liunx`开发
+    - u-boot : (知道过程就可以,大多芯片厂家已提供)
+    - dts 与 驱动开发 : (总结历史项目中)
+    - 根文件系统
 
-## Content
+## 计算机视觉
 
-Every markdown file [will be rendered to HTML, then converted to a Vue SFC][content].
+- [Pillow](../cv/pillow.md), 目标, 图像转换配合应用开发.
+- [OpenCV](../cv/opencv_base.md), 目标: 掌握图像基础, 二值, 滤波, roi, 形态学等...
+- CNN卷积神经网络 - 下一步计划
 
-VuePress support basic markdown syntax and [some extensions][synatex-extensions], you can also [use Vue features][vue-feature] in it.
+## 开发与运维
 
-## Configuration
+> `Windows`与`Linux`
 
-VuePress use a `.vuepress/config.js`(or .ts) file as [site configuration][config], you can use it to config your site.
+- 待总结
+- windows服务
+- win32api
+- go 项目模板
+- go 交叉编译
+- python 项目模板
+- systemctl
 
-For [client side configuration][client-config], you can create `.vuepress/client.js`(or .ts).
+## 网络与安全
 
-Meanwhile, you can also add configuration per page with [frontmatter][].
-
-## Layouts and customization
-
-Here are common configuration controlling layout of `@vuepress/theme-default`:
-
-- [navbar][]
-- [sidebar][]
-
-Check [default theme docs][default-theme] for full reference.
-
-You can [add extra style][style] with `.vuepress/styles/index.scss` file.
-
-[routing]: https://vuejs.press/guide/page.html#routing
-[content]: https://vuejs.press/guide/page.html#content
-[synatex-extensions]: https://vuejs.press/guide/markdown.html#syntax-extensions
-[vue-feature]: https://vuejs.press/guide/markdown.html#using-vue-in-markdown
-[config]: https://vuejs.press/guide/configuration.html#client-config-file
-[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
-[frontmatter]: https://vuejs.press/guide/page.html#frontmatter
-[navbar]: https://vuejs.press/reference/default-theme/config.html#navbar
-[sidebar]: https://vuejs.press/reference/default-theme/config.html#sidebar
-[default-theme]: https://vuejs.press/reference/default-theme/
-[style]: https://vuejs.press/reference/default-theme/styles.html#style-file
+- [arp](../network/arp.md), 目标: arp欺骗, 二层网络了解, 防御思路.
+- [IP&Port](../network/ipport.md), 目标: 嗅探, 问题排查, 防御思路.
+- [防火墙](../network/iptables.md), 目标: 防火墙规则,路由器相关产品开发.
+- [数据包](../network/pack.md), 目标: tcp连接规则分析, 攻击测试, 防御思路.
+- [手撸路由器](../network/exp_router.md), 目标: 熟悉常用网络协议, 路由器相关产品开发.
