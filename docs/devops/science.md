@@ -19,6 +19,11 @@ $env:HTTP_PROXY="http://127.0.0.1:7890"; $env:HTTPS_PROXY="http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 ```
 
+- 我的笔记本电脑爱科学
+
+```shell
+export https_proxy=http://172.16.1.77:7890 http_proxy=http://172.16.1.77:7890 all_proxy=socks5://172.16.1.77:7890
+```
 
 ## `docker`爱科学
 
