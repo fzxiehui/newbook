@@ -37,6 +37,7 @@ export default defineUserConfig({
         children: [
           "/network/network.md",
           "/network/ipport.md",
+          "/network/proxy.md",
           "/network/pack.md",
           "/network/arp.md",
           "/network/iptables.md",
