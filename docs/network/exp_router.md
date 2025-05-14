@@ -54,7 +54,7 @@ echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
 # 加锁
 sudo chattr +i /etc/resolv.conf
 # 解锁
-sudo chattr -i /etc/resolv.conf
+# sudo chattr -i /etc/resolv.conf
 ```
 
 ## 开启路由转发
@@ -134,9 +134,9 @@ sudo chattr -i /etc/resolv.conf
 - 配置
 
     ```shell
-    subnet 192.168.1.0 netmask 255.255.255.0 {
-      range 192.168.1.100 192.168.1.200;
-      option routers 192.168.1.254;
+    subnet 172.16.1.0 netmask 255.255.255.0 {
+      range 172.16.1.1 172.16.1.50;
+      option routers 172.16.1.254;
       option domain-name-servers 8.8.8.8, 114.114.114.114;
     }
     ```
