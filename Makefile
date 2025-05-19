@@ -10,3 +10,4 @@ run:
 
 update:
 	cp -r ./docs/.vuepress/dist/* ~/http/newbook/
+	scp -r ./docs/.vuepress/dist/* root@book.fzxiehui.top:/root/newbook/
