@@ -33,6 +33,19 @@ export default defineUserConfig({
         ]
       },
       {
+        "text": "python",
+        children: [
+          "/python/python.md",
+        ]
+      },
+      {
+        "text": "go",
+        children: [
+          "/go/go.md",
+          "/go/project.md",
+        ]
+      },
+      {
         "text": "网络与防火墙",
         children: [
           "/network/network.md",
